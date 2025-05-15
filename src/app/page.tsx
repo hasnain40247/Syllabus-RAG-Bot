@@ -78,18 +78,18 @@ export default function Home() {
   );
 
   return (
-    <main className="min-h-screen bg-zinc-900 text-white p-30">
+    <main className="min-h-screen p-30  bg-zinc-900">
       <div className="flex justify-between items-center mb-6 ">
         <h1 className="text-4xl font-semibold">Projects</h1>
         <Link href="/new">
-          <button className="bg-white text-black px-4 py-2 rounded hover:bg-gray-200 transition">
+          <button className="bg-white text-black px-4 py-2 rounded-full hover:bg-gray-200 transition">
             + New project
           </button>
         </Link>
       </div>
 
       {/* Search Bar */}
-      <div className="mb-6 rounded-full">
+      <div className="mb-6 rounded-full ">
         <input
           type="text"
           placeholder="Search projects..."
@@ -104,17 +104,13 @@ export default function Home() {
           <div key={project.id} className="relative">
             <Link href={`/${project.id}`}>
               <div className="bg-zinc-800 p-4 rounded-lg hover:bg-zinc-700 transition cursor-pointer">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="text-lg font-medium">
+                <div className="flex justify-between items-start flex flex-col">
+                  
+                  <div className='flex w-full justify-between '>
+                  <h3 className="text-lg font-medium">
                       {project.title} {project.locked && '🔒'}
                     </h3>
-                    <p className="text-sm text-gray-300 mt-1">{project.description}</p>
-                    <span className="text-xs text-gray-500 mt-2 block">
-                      {new Date(project.updated).toLocaleString()}
-                    </span>
-                  </div>
-                  <button
+                    <button
                     onClick={(e) => {
                       e.stopPropagation();
                       e.preventDefault();
@@ -126,6 +122,19 @@ export default function Home() {
                   >
                     <TrashIcon className="h-4 w-4" />
                   </button>
+                  </div>
+                  
+                  <div>
+               
+                    {/* <p className="text-sm text-gray-300 mt-2 ">{project.description}</p> */}
+                    <p className="text-sm text-gray-300 mt-2 line-clamp-1">
+  {project.description}
+</p>
+                    <span className="text-xs text-gray-500 mt-2 block">
+                      {new Date(project.updated).toLocaleString()}
+                    </span>
+                  </div>
+      
                 </div>
               </div>
             </Link>

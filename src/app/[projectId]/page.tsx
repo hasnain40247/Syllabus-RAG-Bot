@@ -107,9 +107,9 @@ export default function ProjectPage() {
 
       <div className="flex flex-col lg:flex-row gap-8 mt-6 items-start">
         <div className="flex flex-col flex-1 space-y-6">
-          <ChatInput onSend={handleSend} />
+          <ChatInput onSend={handleSend} placeholder="How can I help you today?" />
           <div className="flex space-x-4">
-            <button className="px-4 py-2 rounded-2xl bg-white text-black">Your chats</button>
+            <button className="px-3 py-2 rounded-2xl bg-white text-black text-md">Your chats</button>
           </div>
 
           {chats.length === 0 && (

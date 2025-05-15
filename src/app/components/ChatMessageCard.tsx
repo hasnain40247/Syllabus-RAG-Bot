@@ -8,7 +8,7 @@ interface ChatMessageCardProps {
     const name = role === 'user' ? 'You' : 'Ollama';
   
     return (
-      <div className="flex items-start w-full space-x-4">
+      <div className="flex items-start w-full space-x-4 ">
         <img
           src={imageSrc}
           alt={name}
@@ -18,8 +18,8 @@ interface ChatMessageCardProps {
         <div
           className={`px-4 py-3 w-full rounded-tl-md rounded-tr-2xl rounded-bl-2xl rounded-br-2xl ${
             role === 'user'
-              ? 'bg-zinc-800 text-white'
-              : 'bg-zinc-700 text-orange-300'
+              ? 'bg-zinc-800  text-[#F2F2F2]'
+              : 'bg-zinc-700 text-[#F2F2F2]'
           }`}
         >
           <div className="text-xs text-gray-400 mb-1">{name}</div>

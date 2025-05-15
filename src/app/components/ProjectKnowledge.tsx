@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react';
 import { useParams } from 'next/navigation';
+import AnimatedTextarea from './AnimatedTextArea';
 
 export default function ProjectKnowledge() {
   const params = useParams();
@@ -137,12 +138,13 @@ export default function ProjectKnowledge() {
               Provide Claude with relevant instructions and information for chats within this project. This will work alongside user preferences and the selected style in a chat.
             </p>
 
-            <textarea
+       <AnimatedTextarea message={instructions} setMessage={setInstructions}/>
+            {/* <textarea
               value={instructions}
               onChange={(e) => setInstructions(e.target.value)}
               placeholder="Break down large tasks and ask clarifying questions when needed."
               className="w-full h-32 bg-zinc-800 text-white p-3 rounded resize-none border border-zinc-700 focus:outline-none focus:ring-1 focus:ring-zinc-500"
-            />
+            /> */}
 
             <div className="flex justify-end space-x-2 mt-6">
               <button
